@@ -195,13 +195,13 @@ function renderGrid() {
 
   // Show / hide empty state
   if (filtered.length === 0) {
+    elEmpty.style.display = '';
     elGrid.style.display = 'none';
-    elEmpty.hidden = false;
     return;
   }
 
+  elEmpty.style.display = 'none';
   elGrid.style.display = '';
-  elEmpty.hidden = true;
 
   // Build fragment for batch DOM insertion
   const fragment = document.createDocumentFragment();
