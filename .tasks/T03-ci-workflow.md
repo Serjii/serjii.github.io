@@ -1,8 +1,9 @@
 # T03 — `fetch-actors.py` CI — GitHub Actions Workflow
 
-> **Status:** ❌ Pending
-> **Est. time:** 20 min
-> **Depends on:** T02
+> **Status:** ⏭️ Won't Implement
+> **Reason:** The task author decided to keep data updates manual (run `fetch-actors.py` locally). GitHub Actions would cost nothing, but adding a CI workflow for a manual process was deemed unnecessary overhead.
+> **Est. time:** N/A
+> **Depends on:** —
 
 ## Goal
 

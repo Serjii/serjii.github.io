@@ -12,7 +12,7 @@ A polished, modern portfolio website showcasing [Apify](https://apify.com) actor
 ## How It Works
 
 1. **Data Pipeline** — `fetch-actors.py` pulls actor data from the Apify API and writes `actors.json`.
-2. **CI** — GitHub Actions runs the script on every push to `main`, keeping data fresh.
+2. **Local execution** — Run `fetch-actors.py` locally to refresh `actors.json` whenever you update your actor list.
 3. **Frontend** — Vanilla HTML/CSS/JS renders `actors.json` with search, category filters, and sorting.
 
 ## Architecture
@@ -30,7 +30,7 @@ serjii.github.io/
 ├── assets/
 │   ├── favicon.svg
 │   └── og-image.png
-├── .github/workflows/       ← GitHub Actions CI
+# (No CI — data is updated manually via `fetch-actors.py`)
 ├── .tasks/                  ← task files (see backlog)
 │   └── backlog.md
 ├── PLAN.md                  ← full project plan
@@ -67,7 +67,7 @@ python -m http.server 8000
 | Static JSON (not live API) | No token exposure in browser, works offline |
 | `uv` as package manager | Fast, zero-config venv, `pyproject.toml`-native |
 | `requests` for Python | Standard, lightweight |
-| GitHub Actions for CI | Free, integrated, automatic on push |
+| Manual data updates | Run `fetch-actors.py` locally; no CI needed |
 | CSS custom properties | Easy theming, DRY |
 | Outfit font (variable weight) | Clean, modern typography |
 

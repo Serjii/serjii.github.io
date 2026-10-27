@@ -1,8 +1,8 @@
 # T07 — Polish & Deployment
 
-> **Status:** 🟡 Partial (frontend done; CI pipeline and live deploy pending)
+> **Status:** 🟡 Partial (frontend done; live deploy pending)
 > **Est. time:** 30 min
-> **Depends on:** T03, T06
+> **Depends on:** T06
 
 ## Goal
 
@@ -18,8 +18,8 @@ Final touches, SEO, and production deployment.
 - [x] Add `rel="noopener"` to all external links
 - [x] Lazy-load actor icons (`loading="lazy"` on `<img>`)
 - [ ] Push to GitHub → verify GitHub Pages deploy at `https://serjii.github.io`
-- [ ] Set up CI workflow (T03) to auto-update `actors.json` on push
-- [ ] Verify `actors.json` updates on push (CI pipeline works)
+- [ ] Update `actors.json` manually (`uv run python fetch-actors.py`) and push
+- [ ] Verify `actors.json` updates after manual push
 
 ## Deliverable
 
@@ -27,14 +27,12 @@ Live site at `https://serjii.github.io` with working data pipeline.
 
 ## Remaining Work
 
-1. **CI Workflow (T03)** — Create `.github/workflows/fetch-actors.yml` that runs `fetch-actors.py` on push to `main`.
-2. **Mobile Testing** — Test on actual devices or Chrome DevTools device emulation.
-3. **Accessibility Audit** — Verify focus styles, contrast ratios, keyboard navigation work correctly.
-4. **Deploy** — Push to GitHub, ensure GitHub Pages is enabled, verify live site.
-5. **CI Verification** — Push a commit, confirm `actors.json` updates automatically.
+1. **Mobile Testing** — Test on actual devices or Chrome DevTools device emulation.
+2. **Accessibility Audit** — Verify focus styles, contrast ratios, keyboard navigation work correctly.
+3. **Deploy** — Push to GitHub, ensure GitHub Pages is enabled, verify live site.
 
 ## Notes
 
 - All frontend code (HTML, CSS, JS) is complete and functional.
-- The main remaining blocker is the CI workflow (T03) — once that's set up, deploy verification is straightforward.
-- `actors.json` is currently manually generated. CI will make it automatic.
+- All frontend code (HTML, CSS, JS) is complete and functional.
+- `actors.json` is generated manually via `fetch-actors.py` — no CI pipeline is needed.
