@@ -13,5 +13,6 @@
 | T07 | Polish & deployment | 🟡 Partial | [task](T07-polish-deploy.md) |
 | T08 | Profile info & links update | ✅ Done | [task](T08-profile-info-and-links.md) |
 | T09 | Fix "Other" filter returning empty despite count=9 | ✅ Done | [task](T09-filter-null-category-mapping.md) |
+| T10 | Fix "No actors match your search" always visible alongside results | ❌ Pending | [task](T10-fix-empty-state-always-visible.md) |
 
 **Total estimated time:** ~5–7 hours (when all complete)
