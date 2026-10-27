@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serhii — Apify Actor Portfolio</title>
+    <meta name="description" content="A curated collection of Apify actors — open-source automation tools built and maintained by Serhii." />
+
+    <!-- Favicon & Apple touch icon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/og-image.png" />
+
+    <!-- Google Fonts: Outfit (variable weight) -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- App styles & scripts -->
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ===== Header ===== -->
+    <header class="site">
+      <a class="brand" href="/" aria-label="Home">
+        <img
+          class="brand__avatar"
+          src="/assets/avatar.png"
+          alt="Serhii's avatar"
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="brand__text">
+          <span class="brand__name">Serhii</span>
+          <span class="brand__subtitle">Apify Developer</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a
+          href="https://github.com/serjii"
+          target="_blank"
+          rel="noopener"
+          class="nav__link"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-github" />
+          </svg>
+          GitHub
+        </a>
+        <a
+          href="https://apify.com/serjii"
+          target="_blank"
+          rel="noopener"
+          class="nav__link"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-apify" />
+          </svg>
+          Apify Profile
+        </a>
+        <a
+          href="mailto:serhii@example.com"
+          class="nav__link"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-mail" />
+          </svg>
+          Email
+        </a>
+      </nav>
+    </header>
+
+    <!-- ===== Main ===== -->
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero__title">
+          <span class="gradient-text">My Apify Actors</span>
+        </h1>
+        <p class="lede">
+          A collection of open-source automation tools I've built on
+          <a href="https://apify.com/serjii" target="_blank" rel="noopener">Apify</a>
+          — from web scraping to data enrichment.
+        </p>
+
+        <!-- Stats (populated by JS) -->
+        <div class="stats" id="stats" aria-label="Portfolio statistics">
+          <div class="stat-card">
+            <span class="stat-card__value stat-card__value--accent" id="stat-total">—</span>
+            <span class="stat-card__label">Actors</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value stat-card__value--accent" id="stat-public">—</span>
+            <span class="stat-card__label">Public</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__value stat-card__value--accent" id="stat-categories">—</span>
+            <span class="stat-card__label">Categories</span>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="ctas">
+          <a
+            href="https://apify.com/serjii"
+            target="_blank"
+            rel="noopener"
+            class="btn btn--primary"
+          >
+            Browse on Apify
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-arrow" />
+            </svg>
+          </a>
+          <a
+            href="mailto:serhii@example.com?subject=Actor%20Commission"
+            class="btn btn--secondary"
+          >
+            Commission an actor
+          </a>
+        </div>
+      </section>
+
+      <!-- Filter bar -->
+      <section
+        class="filters"
+        id="filters"
+        aria-label="Filter and search actors"
+      >
+        <div class="filters__search">
+          <svg class="icon icon--sm" aria-hidden="true">
+            <use href="#icon-search" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            class="filters__input"
+            placeholder="Search actors…"
+            aria-label="Search actors by name or description"
+            autocomplete="off"
+          />
+          <button
+            id="search-clear"
+            class="filters__clear"
+            aria-label="Clear search"
+            hidden
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-close" />
+            </svg>
+          </button>
+          <kbd class="filters__kbd">/</kbd>
+        </div>
+
+        <div class="filters__chips" id="chips" aria-label="Category filters">
+          <!-- Rendered dynamically by JS -->
+        </div>
+
+        <div class="filters__sort">
+          <label for="sort" class="sr-only">Sort actors</label>
+          <select id="sort" class="filters__select">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="updated">Recently updated</option>
+            <option value="az">A → Z</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Card grid -->
+      <div class="grid-wrap">
+        <div
+          class="grid"
+          id="grid"
+          aria-live="polite"
+          role="list"
+        >
+          <!-- Cards injected by JS -->
+        </div>
+
+        <p
+          class="empty"
+          id="empty"
+          hidden
+        >
+          <svg class="icon icon--lg" aria-hidden="true">
+            <use href="#icon-search" />
+          </svg>
+          <span>No actors match your search.</span>
+        </p>
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site">
+      <div class="footer__inner">
+        <p class="footer__cta">
+          Need a custom actor?
+          <a
+            href="mailto:serhii@example.com?subject=Actor%20Commission"
+          >
+            Get in touch
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-arrow" />
+            </svg>
+          </a>
+        </p>
+        <div class="footer__social">
+          <a
+            href="https://github.com/serjii"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-github" />
+            </svg>
+          </a>
+          <a
+            href="https://apify.com/serjii"
+            target="_blank"
+            rel="noopener"
+            aria-label="Apify Profile"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-apify" />
+            </svg>
+          </a>
+          <a
+            href="mailto:serhii@example.com"
+            aria-label="Email"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-mail" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== Inline SVG Sprite Sheet ===== -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <defs>
+        <!-- Link arrow (right-pointing) -->
+        <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="13 6 19 12 13 18" />
+        </symbol>
+
+        <!-- Search -->
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </symbol>
+
+        <!-- Mail -->
+        <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <polyline points="22,4 12,13 2,4" />
+        </symbol>
+
+        <!-- Close / X -->
+        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </symbol>
+
+        <!-- GitHub (Octocat simplified) -->
+        <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.485-1.395-.375-3.375-2.595-1.365-4.2.435-.21 1.47-.615 2.655-1.23-.885-.27-1.815-1.095-1.935-2.07-.075-.645.285-1.47.885-1.995 2.865-2.055 8.245-1.635 10.365.285.615-.15 1.23-.375 1.785-.675-.735 1.065-2.655 2.025-3.81 2.295 1.125.645 2.34 1.515 2.34 3.375 0 2.385-1.56 4.245-3.135 5.085 1.14.675 2.25.9 2.25.9l.045 1.29c0 .3.21.645.825.555C20.565 21.795 24 17.31 24 12c0-5.37-4.62-12-12-12z" />
+        </symbol>
+
+        <!-- Apify (stylized "A") -->
+        <symbol id="icon-apify" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </symbol>
+      </defs>
+    </svg>
+  </body>
+</html>
