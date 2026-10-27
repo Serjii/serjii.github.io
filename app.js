@@ -98,7 +98,9 @@ function getFilteredActors() {
 
   // Category filter
   if (activeCategory !== 'all') {
-    filtered = filtered.filter((a) => a.category === activeCategory);
+    filtered = filtered.filter(
+      (a) => (a.category || 'Other') === activeCategory
+    );
   }
 
   // Search filter

@@ -11,5 +11,7 @@
 | T05 | `index.html` — Page structure | ✅ Done | [task](T05-index-html.md) |
 | T06 | `app.js` — Client-side rendering & interactivity | ✅ Done | [task](T06-app-js.md) |
 | T07 | Polish & deployment | 🟡 Partial | [task](T07-polish-deploy.md) |
+| T08 | Profile info & links update | ✅ Done | [task](T08-profile-info-and-links.md) |
+| T09 | Fix "Other" filter returning empty despite count=9 | ✅ Done | [task](T09-filter-null-category-mapping.md) |
 
-**Total estimated time:** ~5–6 hours (when all complete)
+**Total estimated time:** ~5–7 hours (when all complete)
