@@ -1,0 +1,9 @@
+[project]
+name = "apify-portfolio"
+version = "0.1.0"
+description = "Data pipeline for the Apify Actor Portfolio website"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+]
