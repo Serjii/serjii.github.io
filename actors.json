@@ -1,0 +1,213 @@
+{
+  "actors": [
+    {
+      "id": "nU8m0oiYizBPsQ671",
+      "title": "Google Autocomplete Keyword Research Tool",
+      "description": "A multi-depth scraper that harvests Google Autocomplete suggestions from any seed keyword. Expand a single topic into hundreds of long-tail keyword ideas by traversing the full alphabet and recursively following the most relevant suggestions.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-nU8m0oiYizBPsQ671-sGcV4xaQXu-google.png",
+      "link": "https://apify.com/serj_henrique/google-autocomplete-keyword-research-tool",
+      "stats": {
+        "totalRuns": 20,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-10-16T22:05:23.915Z",
+      "modifiedAt": "2026-10-16T22:15:57.186Z"
+    },
+    {
+      "id": "hdUewp1aqhBvitPPI",
+      "title": "Linkedin Ad Library Scraper",
+      "description": "Scrape and analyze paid advertising campaigns from the LinkedIn Ad Library — extract headlines, body copy, images, videos, CTAs, targeting details, impressions, and advertiser information across multiple countries.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-hdUewp1aqhBvitPPI-ZyKURbKVaf-linkedin.png",
+      "link": "https://apify.com/serj_henrique/linkedin-ad-library-scraper",
+      "stats": {
+        "totalRuns": 28,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-10-12T22:46:38.281Z",
+      "modifiedAt": "2026-10-25T11:48:42.587Z"
+    },
+    {
+      "id": "tFEpFk2jmnuBfwsXD",
+      "title": "Apify Mercado Livre Scraper",
+      "description": "",
+      "category": null,
+      "isPublic": false,
+      "iconUrl": "",
+      "link": "https://apify.com/serj_henrique/apify-mercado-livre-scraper",
+      "stats": {
+        "totalRuns": 22,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-10-04T20:49:44.818Z",
+      "modifiedAt": "2026-10-05T23:50:05.462Z"
+    },
+    {
+      "id": "zOYFtFBnjEbhV2O8b",
+      "title": "Mercado Livre Scraper",
+      "description": "Automate product research on Mercado Livre — Brazil's largest e-commerce marketplace. Scrape product names, prices, discounts, seller info, ratings, free shipping status, and more from search results in structured, analysis-ready JSON.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-zOYFtFBnjEbhV2O8b-1FCUBzVkWw-mercadolivre.png",
+      "link": "https://apify.com/serj_henrique/mercado-livre-scraper",
+      "stats": {
+        "totalRuns": 54,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-10-02T18:58:37.531Z",
+      "modifiedAt": "2026-10-05T23:55:42.948Z"
+    },
+    {
+      "id": "ZktlCEHhNvVk7Agq5",
+      "title": "User Interviews Scraper",
+      "description": "The User Interviews Scraper is a powerful tool designed to extract valuable information about user research studies hosted on UserInterviews.com.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-ZktlCEHhNvVk7Agq5-hu8eeyJ067-userinterviews.png",
+      "link": "https://apify.com/serj_henrique/user-interviews-scraper",
+      "stats": {
+        "totalRuns": 39,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-09-22T16:56:31.401Z",
+      "modifiedAt": "2026-09-22T17:20:43.215Z"
+    },
+    {
+      "id": "Ry0VdZoYFwcwsk3Gz",
+      "title": "Exploding Topics - Top Websites Scraper",
+      "description": "Scrape trending and “exploding” websites from Exploding Topics, categorized by industry and region, to uncover emerging market trends.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-Ry0VdZoYFwcwsk3Gz-uEYBDDqlFC-explodingtopics.png",
+      "link": "https://apify.com/serj_henrique/exploding-topics-top-websites-scraper",
+      "stats": {
+        "totalRuns": 38,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-09-18T22:08:49.420Z",
+      "modifiedAt": "2026-09-18T22:16:48.441Z"
+    },
+    {
+      "id": "9JQHa8iQkQWq1Y8cF",
+      "title": "Similarweb Scraper",
+      "description": "Extract comprehensive SimilarWeb analytics data for any domain — including traffic, rankings, competitors, audience demographics, referral sources, and technology stack — in structured  format.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-9JQHa8iQkQWq1Y8cF-DVp0zvMsGy-similarweb.png",
+      "link": "https://apify.com/serj_henrique/similarweb-scraper",
+      "stats": {
+        "totalRuns": 110,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-09-16T13:12:13.378Z",
+      "modifiedAt": "2026-09-25T23:44:41.843Z"
+    },
+    {
+      "id": "MNrnmZQWpvz8Heb3E",
+      "title": "Tennis Abstract Scraper",
+      "description": "Extract complete tennis player data from TennisAbstract.com: career match history, per-match statistics (aces, hold %, break %, dominance ratio), tour-level and challenger seasonal summaries, and year-end Elo rankings — delivered as clean JSON on Apify.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-MNrnmZQWpvz8Heb3E-shtxo1LDNb-tennis-abstract.png",
+      "link": "https://apify.com/serj_henrique/tennis-abstract-scraper",
+      "stats": {
+        "totalRuns": 65,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-09-03T20:03:33.308Z",
+      "modifiedAt": "2026-09-20T20:11:10.577Z"
+    },
+    {
+      "id": "3hKerpJK8SLhlhE9C",
+      "title": "Vercel Domain Scraper",
+      "description": "Check domain availability and pricing on Vercel for any brand name, across the TLDs you choose.",
+      "category": null,
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-3hKerpJK8SLhlhE9C-dUZ48U8LQG-vercel.png",
+      "link": "https://apify.com/serj_henrique/vercel-domain-scraper",
+      "stats": {
+        "totalRuns": 59,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-08-28T20:37:40.985Z",
+      "modifiedAt": "2026-08-30T12:29:05.258Z"
+    },
+    {
+      "id": "ASV2VxLLHsFiCkqzh",
+      "title": "MCP B3 Boletim Diário",
+      "description": "Ator Apify que expõe um servidor MCP (Model Context Protocol) para consulta de dados do Boletim Diário da B3,",
+      "category": "MCP_SERVERS",
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-ASV2VxLLHsFiCkqzh-prrMc4ABmC-b3-logo.png",
+      "link": "https://apify.com/serj_henrique/mcp-b3-boletim-diário",
+      "stats": {
+        "totalRuns": 165,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-08-03T20:23:55.612Z",
+      "modifiedAt": "2026-10-08T10:43:24.070Z"
+    },
+    {
+      "id": "4oNRfmc624J6powKk",
+      "title": "B3 - Boletim Diário - Negócios Consolidados do Pregão",
+      "description": "Extraia os dados de Negócios Consolidados do Pregão de bolsa publicados no Boletim Diário da B3. Obtenha dados estruturados sobre preços, volumes, ofertas e ajustes de ações, opções e futuros negociados.",
+      "category": "AUTOMATION",
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-4oNRfmc624J6powKk-wAOkak2z6Z-b3-logo.png",
+      "link": "https://apify.com/serj_henrique/b3-boletim-diário-negócios-consolidados-do-pregão",
+      "stats": {
+        "totalRuns": 115,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-07-06T16:18:14.836Z",
+      "modifiedAt": "2026-07-06T16:25:50.582Z"
+    },
+    {
+      "id": "5ATKKRislbTUCuzhL",
+      "title": "B3 - Boletim Diário - Participação dos Investidores",
+      "description": "Extraia os dados de Participação dos Investidores do Boletim Diário da B3 publicados no Boletim Diário da B3. Obtenha dados estruturados sobre a contribuição de cada perfil de investidor no volume total de negociações da bolsa.",
+      "category": "AUTOMATION",
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-5ATKKRislbTUCuzhL-iXkbvM4743-b3-logo.png",
+      "link": "https://apify.com/serj_henrique/b3-boletim-diário-participação-dos-investidores",
+      "stats": {
+        "totalRuns": 116,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-07-05T18:39:48.153Z",
+      "modifiedAt": "2026-07-05T19:01:43.897Z"
+    },
+    {
+      "id": "eliyMbB31A2Q9X07c",
+      "title": "B3 - Boletim Diário - Derivativos - Posições em Aberto",
+      "description": "Extraia os dados de Posições em Aberto de derivativos de bolsa publicados no Boletim Diário da B3. Obtenha dados estruturados sobre opções, open interest, distribuição de posições entre tomadores e doadores, e muito mais.",
+      "category": "AUTOMATION",
+      "isPublic": true,
+      "iconUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/u7crpxbbZSEdWucom-actor-eliyMbB31A2Q9X07c-xtBhogbKdl-b3-logo.png",
+      "link": "https://apify.com/serj_henrique/b3-boletim-diário-derivativos-posições-em-aberto",
+      "stats": {
+        "totalRuns": 139,
+        "totalUsers": 0,
+        "totalUsers30Days": 0
+      },
+      "createdAt": "2026-06-30T18:41:09.585Z",
+      "modifiedAt": "2026-08-29T13:50:33.315Z"
+    }
+  ],
+  "generatedAt": "2026-10-27T21:36:45.000Z"
+}

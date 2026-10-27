@@ -11,6 +11,7 @@ Environment variables:
 
 import json
 import os
+import re
 import time
 from pathlib import Path
 
@@ -41,8 +42,8 @@ if not APIFY_TOKEN:
 
 HEADERS = {
     "X-Limit-Rows": "1000",
+    "Authorization": f"Bearer {APIFY_TOKEN}",
 }
-AUTH = (APIFY_USERNAME, APIFY_TOKEN)
 
 
 # ---------------------------------------------------------------------------
@@ -79,16 +80,25 @@ def map_category(raw: str) -> str:
 # ---------------------------------------------------------------------------
 
 def fetch_json(url: str, params: dict | None = None) -> dict:
-    """GET a JSON endpoint with retry + exponential backoff on 429."""
+    """GET a JSON endpoint with retry + exponential backoff on 429.
+
+    Automatically unwraps the Apify API's `data` key (e.g. {"data": {...}} → {...}).
+    Appends the APIFY_TOKEN as a query parameter for authentication.
+    """
     max_retries = 5
     delay = 1.0
 
+    if params is None:
+        params = {}
+    params["token"] = APIFY_TOKEN
+
     for attempt in range(max_retries + 1):
-        resp = requests.get(url, headers=HEADERS, params=params, auth=AUTH, timeout=30)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
 
         if resp.status_code == 200:
             resp.raise_for_status()
-            return resp.json()
+            body = resp.json()
+            return body.get("data", body)
 
         if resp.status_code == 401:
             raise SystemExit(
@@ -114,7 +124,11 @@ def fetch_json(url: str, params: dict | None = None) -> dict:
 
 
 def fetch_actor_detail(actor_id: str) -> dict | None:
-    """Fetch a single actor's details (may include pictureUrl)."""
+    """Fetch a single actor's full details from the detail endpoint.
+
+    The response is already unwrapped (data key removed) by fetch_json.
+    Works without auth for public actors; requires auth for private actors.
+    """
     try:
         data = fetch_json(ITEM_URL.format(actor_id=actor_id))
         return data
@@ -143,7 +157,7 @@ def fetch_all_actors() -> list[dict]:
             "desc": "1",
         })
 
-        items = page if isinstance(page, list) else page.get("items", [])
+        items = page.get("items", [])
         if not items:
             break
 
@@ -158,18 +172,33 @@ def fetch_all_actors() -> list[dict]:
     return actors
 
 
-def enrich_with_picture(actors: list[dict]) -> list[dict]:
-    """Try to fetch pictureUrl for actors that lack one.
+def enrich_actor_details(actors: list[dict]) -> list[dict]:
+    """Fetch full details from the detail endpoint for each actor.
 
-    Best-effort — we skip any actor_id that fails to keep the pipeline moving.
+    Best-effort — skips any actor that fails to keep the pipeline moving.
+    Enriches description, isPublic, categories, pictureUrl, SEO fields,
+    and enriches stats with review/bookmark counts from the detail response.
     """
     for actor in actors:
-        if actor.get("pictureUrl"):
+        if all(actor.get(k) for k in ("pictureUrl", "description", "isPublic", "categories")):
             continue
         try:
             detail = fetch_actor_detail(actor["id"])
-            if detail and detail.get("pictureUrl"):
-                actor["pictureUrl"] = detail["pictureUrl"]
+            if detail:
+                detail_data = detail.get("data", detail)  # detail endpoint also wraps in "data"
+                actor.setdefault("description", detail_data.get("description", ""))
+                actor.setdefault("isPublic", detail_data.get("isPublic", True))
+                actor.setdefault("categories", detail_data.get("categories", []))
+                actor.setdefault("pictureUrl", detail_data.get("pictureUrl", ""))
+                actor.setdefault("seoTitle", detail_data.get("seoTitle"))
+                actor.setdefault("seoDescription", detail_data.get("seoDescription"))
+                # Enrich stats with review/bookmark counts
+                detail_stats = detail_data.get("stats", {})
+                if "stats" not in actor:
+                    actor["stats"] = {}
+                actor["stats"].setdefault("actorReviewCount", detail_stats.get("actorReviewCount", 0))
+                actor["stats"].setdefault("actorReviewRating", detail_stats.get("actorReviewRating", 0))
+                actor["stats"].setdefault("bookmarkCount", detail_stats.get("bookmarkCount", 0))
         except Exception:
             pass  # non-critical — proceed
 
@@ -182,7 +211,7 @@ def transform_actors(raw: list[dict]) -> list[dict]:
         categories = item.get("categories", [])
         primary_category = map_category(categories[0]) if categories else None
 
-        title_slug = item.get("title", "untitled").lower().replace(" ", "-")
+        title_slug = re.sub(r"[\s-]+", "-", item.get("title", "untitled")).lower().strip("-")
 
         actor = {
             "id": item["id"],
@@ -223,9 +252,9 @@ def main() -> None:
 
     print(f"  Found {len(raw)} actor(s).")
 
-    # Enrich with pictureUrl (best-effort)
-    print("Enriching with picture URLs (best-effort) …")
-    enrich_with_picture(raw)
+    # Enrich with full actor details (best-effort)
+    print("Enriching with actor details (best-effort) …")
+    enrich_actor_details(raw)
 
     # Transform to output schema
     actors = transform_actors(raw)
